@@ -80,7 +80,7 @@ def get_default_path_for_OSid():
 # sets Install_Dir to the default (and preferred) installation directory
 Install_Dir = os.environ.get('NRGSUITE_INSTALLATION', get_default_path_for_OSid())
  
-if Install_Dir is '' or not os.path.isdir(Install_Dir):
+if Install_Dir == '' or not os.path.isdir(Install_Dir):
     Install_Dir = get_default_path_for_OSid()
 
 if os.path.isdir(Install_Dir) and sys.version_info > (2, 5):
